@@ -20,6 +20,7 @@
         <ul>
             <li><a href="viewDataGuru.php">Data Guru</a></li>
             <li><a href="viewDataSiswa.php">Data Siswa</a></li>
+            <li><a href="viewMapel.php">Data Mata Pelajaran</a></li>
             <li><a href="addDataSiswa.php">Tambah Data Siswa</a></li>
             <li><a href="index.php">Keluar</a></li>
 
