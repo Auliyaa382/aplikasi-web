@@ -37,14 +37,15 @@
             <?php
         include "koneksi.php";
         $n=1;
-        $query = mysqli_query($koneksi, 'SELECT * FROM tbnilai INNER JOIN tbsiswa ON tbnilai.nis = tbsiswa.nis');
+        $query = mysqli_query($koneksi, 'SELECT * FROM tbnilai JOIN tbsiswa ON tbnilai.nis = tbsiswa.nis JOIN tbmata_pelajaran on tbnilai.kode_pelajaran = tbmata_pelajaran.kode_pelajaran');
             while ($data  = mysqli_fetch_array($query)){
                 $id = $data['id_nilai'];
                 $nis = $data['nis'];
                 $nama = $data['nama_siswa'];
                 $kelas = $data['kelas'];
-                $mapel = $data['kode_pelajaran'];
+                $mapel = $data['nama_pelajaran'];
                 $nilai = $data['nilai'];
+
         ?>
             <tr>
             <td><?php echo $n++ ?></td>
