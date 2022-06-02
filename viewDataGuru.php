@@ -35,6 +35,7 @@
                 <td>Username</td>
                 <td>Password</td>
                 <td>Hak Akses</td>
+                <td>AKSI</td>
             </tr>
             <?php
             $n =1;
@@ -60,6 +61,10 @@
                 <td><?php echo $username ?></td>
                 <td><?php echo $password ?></td>
                 <td><?php echo $hakakses ?></td>
+                <td>
+                    <a href="editDataGuru.php?id=<?php echo $nip ?>">Edit</a>||
+                    <a href="hapusDataGuru.phpid=<?php echo $nip ?>">Hapus</a>
+                </td>
         <?php } ?>
         </tr>
         </table>
