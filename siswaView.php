@@ -42,14 +42,21 @@
             <p>Nilai :</p>
             <?php
         $query1 = mysqli_query($koneksi, 'SELECT * FROM tbnilai INNER JOIN tbmata_pelajaran ON tbnilai.kode_pelajaran = tbmata_pelajaran.kode_pelajaran WHERE nis = "'.$nis.'"');
+        $cek = mysqli_num_rows($query1);
+        if($cek==0){
+            echo "<p>Maaf, nilai anda belum diinputkan oleh guru</p>";
+        }else{
+
         while ($data1  = mysqli_fetch_array($query1)){
             $idnilai = $data1['id_nilai'];
             $mapel = $data1['nama_pelajaran'];
             $nilai = $data1['nilai'];
         ?>
-            <p>Mata Pelajaran <?php echo $mapel ?> (<?php echo $idnilai ?>) : <?php echo $nilai ?> </p>
+            <p>Mata Pelajaran <?php echo $mapel ?> : <?php echo $nilai ?> </p>
             <?php
         }
+    }
+        
     }?>
         </div>
 

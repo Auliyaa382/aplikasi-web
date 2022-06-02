@@ -37,6 +37,7 @@
                 <td>Username</td>
                 <td>Password</td>
                 <td>Hak Akses</td>
+                <td>AKSI</td>
 
             </tr>
             <?php
