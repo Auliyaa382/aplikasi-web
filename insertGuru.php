@@ -9,14 +9,14 @@
      $password = $_POST['password'];
      $hakakses = $_POST['hakakses'];
 
-    //  $cek= mysqli_query($koneksi,"SELECT * FROM tbuser where hakakses='GURU'");
-    //  while ($data  = mysqli_fetch_array($cek)){
-    //     $user = $data['username'];
-    //     if($username == $user){
-    //         echo "<script type='text/javascript'> alert('Input Data Gagal'); window.location='addDataGuru.php';</script>";
-    //     }
-    //     exit();
-    //     }
+     //cek username
+    $cek= mysqli_query($koneksi,"SELECT username FROM tbuser where username='$username'");
+    $datauser  = mysqli_num_rows($cek);
+    echo $datauser;
+
+    if($datauser >0){
+        echo "<script type='text/javascript'> alert('Input Data Gagal, Silahkan uabh username-nya karena username sudah ada.'); window.location='addDataGuru.php';</script>";
+    }else{
         $insertdata="INSERT INTO tbguru(nip, nama_guru, jenis_kelamin, alamat, username) VALUES ($nip,'$nama','$jk','$alamat', '$username')";
             $sql=mysqli_query($koneksi,$insertdata); 
                 if ($sql){
@@ -25,7 +25,9 @@
                     echo "<script type='text/javascript'> alert('Input Data Gagal'); window.location='addDataGuru.php';</script>";
                 }	
             $insertdata1="INSERT INTO tbuser(username, password, hakakses) VALUES ('$username','$password','$hakakses')";
-            $sql1=mysqli_query($koneksi,$insertdata1); 
+            $sql1=mysqli_query($koneksi,$insertdata1);
+    }
+         
     }
 
 ?>
