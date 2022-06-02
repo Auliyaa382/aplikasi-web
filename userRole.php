@@ -13,7 +13,7 @@ $password = $_POST['password'];
             header("location:/aplikasi-web/viewDataGuru.php");
         }
         else if($qry['hakakses']=="GURU"){
-            header("location:/aplikasi-web/guruView.php");
+            header('location:/aplikasi-web/guruView.php?id="'.$username.'"');
         }
         else if($qry['hakakses']=="SISWA"){
             header('location:/aplikasi-web/siswaView.php?id ="'.$username.'"');

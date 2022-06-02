@@ -24,6 +24,15 @@
     </nav>
     <main>
         <h3>Selamat Datang Di halaman GURU</h3>
+        <!-- <?php
+        // include "koneksi.php";
+        // print '<pre>';
+        // var_dump( $_GET );
+        // print '</pre>';
+        // $username = $_GET['id'];
+        // echo $username;
+        // $user = preg_replace("/[^a-zA-Z0-9]/", "", $username);
+        ?> -->
         <table>
             <tr>
                 <td>No.</td>
