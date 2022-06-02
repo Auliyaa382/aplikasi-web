@@ -64,6 +64,10 @@
                 <td><?php echo $username ?></td>
                 <td><?php echo $password ?></td>
                 <td><?php echo $hakakses ?></td>
+                <td>
+                    <a href="editDataSiswa.php?id=<?php echo $nis ?>">Edit</a>||
+                    <a href="deleteDataSiswa.php?id=<?php echo $nis ?> &user=<?php echo $username ?>">Hapus</a>
+                </td>
             </tr>
             <?php } ?>
         </table>

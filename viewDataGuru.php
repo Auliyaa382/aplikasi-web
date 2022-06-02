@@ -63,7 +63,7 @@
                 <td><?php echo $hakakses ?></td>
                 <td>
                     <a href="editDataGuru.php?id=<?php echo $nip ?>">Edit</a>||
-                    <a href="hapusDataGuru.phpid=<?php echo $nip ?>">Hapus</a>
+                    <a href="deleteDataGuru.php?id=<?php echo $nip ?> &user=<?php echo $username ?>">Hapus</a>
                 </td>
         <?php } ?>
         </tr>
