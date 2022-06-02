@@ -20,8 +20,9 @@
         <li><a href="index.php">Keluar</a></li>
     </nav>
     <main>
-        <h3>Selamat Datang Di halaman SISWA</h3>
-        <?php
+        <div class="card">
+            <h3>Selamat Datang Di halaman SISWA</h3>
+            <?php
         include "koneksi.php";
         // print '<pre>';
         // var_dump( $_GET );
@@ -29,15 +30,29 @@
         $username = $_GET['id_'];
         // echo $username;
         $user = preg_replace("/[^a-zA-Z0-9]/", "", $username); //untuk menghapus tanda petik ""
-        echo $user;
+        // echo $user;
         $query = mysqli_query($koneksi, 'SELECT * FROM tbsiswa where username= "'.$user.'"');
         while ($data  = mysqli_fetch_array($query)){
             $nis = $data['nis'];
             $nama = $data['nama_siswa'];
+            $kelas = $data['kelas'];
         ?>
-        <p><?php echo $nama ?></p>
-        <?php } ?>
-        <p>Haloo</p>
+            <p>Nama Siswa : <?php echo $nama ?></p>
+            <p>Kelas : <?php echo $kelas?></p>
+            <p>Nilai :</p>
+            <?php
+        $query1 = mysqli_query($koneksi, 'SELECT * FROM tbnilai INNER JOIN tbmata_pelajaran ON tbnilai.kode_pelajaran = tbmata_pelajaran.kode_pelajaran WHERE nis = "'.$nis.'"');
+        while ($data1  = mysqli_fetch_array($query1)){
+            $idnilai = $data1['id_nilai'];
+            $mapel = $data1['nama_pelajaran'];
+            $nilai = $data1['nilai'];
+        ?>
+            <p>Mata Pelajaran <?php echo $mapel ?> (<?php echo $idnilai ?>) : <?php echo $nilai ?> </p>
+            <?php
+        }
+    }?>
+        </div>
+
     </main>
     <footer>
         <p>Copyright &#169; 2022</p>

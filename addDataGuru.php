@@ -20,6 +20,7 @@
         <ul>
             <li><a href="viewDataGuru.php">Data Guru</a></li>
             <li><a href="viewDataSiswa.php">Data Siswa</a></li>
+            <li><a href="index.php">Keluar</a></li>
         </ul>
     </nav>
     <main>
@@ -34,7 +35,7 @@
                 <option value="Perempuan">Perempuan</option>
             </select><br>
             <p>Alamat</p>
-            <textarea name="alamat" cols="30" rows="10"></textarea>
+            <textarea name="alamat"></textarea>
             <p>Username</p>
             <input type="text" name="username">
             <p>Password</p>

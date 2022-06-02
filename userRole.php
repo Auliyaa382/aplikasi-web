@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "koneksi.php";
-$username = $_POST['username'];
+$username = $_POST['username1'];
 $password = $_POST['password'];
 
     $sql = mysqli_query($koneksi,'SELECT * FROM tbuser WHERE username="'.$username.'" AND password="'.$password.'"');
@@ -10,7 +10,7 @@ $password = $_POST['password'];
         $_SESSION['username'] = $qry['username'];
         $_SESSION['hakakses'] = $qry['hakakses'];
         if($qry['hakakses']=="ADMIN"){
-            header("location:/aplikasi-web/adminView.php");
+            header("location:/aplikasi-web/viewDataGuru.php");
         }
         else if($qry['hakakses']=="GURU"){
             header("location:/aplikasi-web/guruView.php");

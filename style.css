@@ -1,63 +1,216 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
 }
-h2{
-    color: blue;
+
+h2 {
+    color: #00a2c6;
     text-align: center;
 }
-h3{
-    color: #3db1ff;
+
+h3 {
+    color: #00a2c6;
+    text-align: center;
 }
-header{
+
+header {
     display: inline;
 }
-.jumbotron{
+
+.jumbotron {
     font-size: 20px;
     padding: 60px;
     background-color: #00c8eb;
     text-align: center;
     color: white;
 }
-nav{
+
+nav {
     background-color: #00a2c6;
     padding: 5px;
     position: sticky;
     top: 0;
 }
-nav a{
+
+nav a {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
     color: white;
 }
-nav a:hover{
+
+nav a:hover {
     font-weight: bold;
 }
-nav li{
+
+nav li {
     display: inline;
     list-style-type: none;
     margin-right: 20px;
 }
-main{
+
+main {
     padding: 50px;
     overflow: auto;
     margin: auto;
     width: 1200px;
 }
-main h3{
-    text-align: center;
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
-footer{
+
+textarea[name=alamat] {
+    width: 100%;
+    padding: 16px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]:hover {
+    background-color: #00a2c6;
+}
+
+input[type=date] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 45%;
+    background-color: #00c8eb;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    width: 45%;
+    color: #00c8eb;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid #00a2c6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=password] {
+    width: 45%;
+    color: #00c8eb;
+    padding: 14px 20px;
+    margin: 8px 6px;
+    border: 1px solid #00a2c6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[name=username1] {
+    width: 45%;
+    color: #00c8eb;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid #00a2c6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type=submit] {
+    width: 45%;
+    background-color: #00c8eb;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 80px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+footer {
     padding: 20px;
     color: white;
-    background-color: #3067ffb1;
+    background-color: #00a2c6;
     text-align: center;
     font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.left {
+    float: left;
+    width: 50%;
+    padding-right: 5%;
+}
+
+.right {
+
+    float: right;
+    width: 50%;
+    padding-left: 5%;
+}
+
+.button {
+    padding-top: 35%;
+    text-align: center;
+}
+
+form {
+    margin: 20px;
+}
+
+table,
+td,
+tr {
+    border: 1px solid black;
+}
+tr,td{
+    padding: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.a {
+    height: 750px;
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+
 }

@@ -13,49 +13,49 @@
     <header>
         <div class="jumbotron">
             <h1>GURU VIEW</h1>
-            <p>Tampilan dari halaman admin</p>
+            <p>Tampilan dari halaman guru</p>
         </div>
     </header>
     <nav>
         <ul>
+            <li><a href="guruView.php">Data Siswa</a></li>
             <li><a href="nilaiSiswa.php">Nilai Siswa</a></li>
             <li><a href="index.php">Keluar</a></li>
         </ul>
     </nav>
     <main>
-        <h3>Selamat Datang Di halaman GURU</h3>
+        <h3>Data Siswa</h3>
         <table>
             <tr>
                 <td>No.</td>
+                <td>Id Nilai</td>
                 <td>NIS</td>
                 <td>Nama Siswa</td>
-                <td>Jenis Kelamin</td>
                 <td>Kelas</td>
-                <td>AKSI
-                </td>
+                <td>Mata Pelajaran</td>
             </tr>
             <?php
         include "koneksi.php";
-        $n =1;
-        $query = mysqli_query($koneksi, 'SELECT * FROM tbsiswa');
+        $n=1;
+        $query = mysqli_query($koneksi, 'SELECT * FROM tbnilai INNER JOIN tbsiswa ON tbnilai.nis = tbsiswa.nis');
             while ($data  = mysqli_fetch_array($query)){
+                $id = $data['id_nilai'];
                 $nis = $data['nis'];
                 $nama = $data['nama_siswa'];
-                $jk = $data['jenis_kelamin'];
                 $kelas = $data['kelas'];
+                $mapel = $data['kode_pelajaran'];
+                $nilai = $data['nilai'];
         ?>
             <tr>
-
-                <td><?php echo $n++ ?></td>
-                <td><?php echo $nis ?></td>
-                <td><?php echo $nama ?></td>
-                <td><?php echo $jk ?></td>
-                <td><?php echo $kelas ?></td>
-                <td>
-                    <a href="addNilaiSiswa.php?id=<?php echo $nis ?>">Tambah</a>
-                </td>
-                <?php }?>
+            <td><?php echo $n++ ?></td>
+            <td><?php echo $id ?></td>
+            <td><?php echo $nis ?></td>
+            <td><?php echo $nama ?></td>
+            <td><?php echo $kelas ?></td>
+            <td><?php echo $mapel ?></td>
+            <td><?php echo $nilai ?></td>
             </tr>
+            <?php } ?>
         </table>
     </main>
     <footer>

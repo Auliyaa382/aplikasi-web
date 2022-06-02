@@ -21,6 +21,7 @@
             <li><a href="viewDataGuru.php">Data Guru</a></li>
             <li><a href="viewDataSiswa.php">Data Siswa</a></li>
             <li><a href="addDataSiswa.php">Tambah Data Siswa</a></li>
+            <li><a href="index.php">Keluar</a></li>
 
         </ul>
     </nav>
@@ -36,6 +37,7 @@
                 <td>Username</td>
                 <td>Password</td>
                 <td>Hak Akses</td>
+                <td>Aksi</td>
             </tr>
             <?php
             $n =1;
@@ -62,6 +64,10 @@
                 <td><?php echo $username ?></td>
                 <td><?php echo $password ?></td>
                 <td><?php echo $hakakses ?></td>
+                <td>
+                    <a href="editDataSiswa.php">Edit</a> ||
+                    <a href="hapusDataSiswa.php">Hapus</a>
+                </td>
             </tr>
             <?php } ?>
         </table>
