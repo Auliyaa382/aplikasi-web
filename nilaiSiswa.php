@@ -33,6 +33,8 @@
                 <td>Nama Siswa</td>
                 <td>Kelas</td>
                 <td>Mata Pelajaran</td>
+                <td>Nilai</td>
+                <td>Aksi</td>
             </tr>
             <?php
         include "koneksi.php";
@@ -55,6 +57,10 @@
             <td><?php echo $kelas ?></td>
             <td><?php echo $mapel ?></td>
             <td><?php echo $nilai ?></td>
+            <td>
+                <a href="editNilai.php?id=<?php echo $id ?>">Edit</a> ||
+                <a href="deleteNilai.php?id=<?php echo $id ?>">Hapus</a>
+            </td>
             </tr>
             <?php } ?>
         </table>
